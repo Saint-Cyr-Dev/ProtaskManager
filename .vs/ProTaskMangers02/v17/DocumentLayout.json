@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|c:\\users\\bjuni\\onedrive\\bureau\\protaskmangers02\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|c:\\users\\bjuni\\onedrive\\bureau\\protaskmangers02\\viewmodels\\projectdetailsviewmodel.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|solutionrelative:viewmodels\\projectdetailsviewmodel.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|c:\\users\\bjuni\\onedrive\\bureau\\protaskmangers02\\services\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|solutionrelative:services\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|c:\\users\\bjuni\\onedrive\\bureau\\protaskmangers02\\viewmodels\\projectsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|solutionrelative:viewmodels\\projectsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|c:\\users\\bjuni\\onedrive\\bureau\\protaskmangers02\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|c:\\users\\bjuni\\onedrive\\bureau\\protaskmangers02\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|solutionrelative:models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|c:\\users\\bjuni\\onedrive\\bureau\\protaskmangers02\\viewmodels\\collaboratorsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D70BDC5B-01AD-44CA-953C-1B8B65B5055D}|ProTaskMangers02.csproj|solutionrelative:viewmodels\\collaboratorsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "Models\\Project.cs",
+              "ToolTip": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\Models\\Project.cs",
+              "RelativeToolTip": "Models\\Project.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T07:36:49.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectDetailsViewModel.cs.cs",
+              "DocumentMoniker": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\ProjectDetailsViewModel.cs.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ProjectDetailsViewModel.cs.cs",
+              "ToolTip": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\ProjectDetailsViewModel.cs.cs",
+              "RelativeToolTip": "ViewModels\\ProjectDetailsViewModel.cs.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:48:09.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CollaboratorsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\CollaboratorsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\CollaboratorsViewModel.cs",
+              "ToolTip": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\CollaboratorsViewModel.cs",
+              "RelativeToolTip": "ViewModels\\CollaboratorsViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:47:24.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\MainPage.xaml.cs",
+              "RelativeToolTip": "MainPage.xaml.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAADwv0QAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:46:01.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjectsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\ProjectsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ProjectsViewModel.cs",
+              "ToolTip": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\ProjectsViewModel.cs",
+              "RelativeToolTip": "ViewModels\\ProjectsViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:36:21.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAADwvx0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:35:57.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\Services\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Services\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\bjuni\\OneDrive\\Bureau\\ProTaskMangers02\\Services\\DatabaseHelper.cs",
+              "RelativeToolTip": "Services\\DatabaseHelper.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAIwGUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:31:29.202Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

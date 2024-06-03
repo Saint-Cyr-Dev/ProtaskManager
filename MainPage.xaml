@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProTaskManager.MainPage"
+             Title="TaskTrek"
+             StyleClass="mainPage">
+
+    <Grid>
+        <!-- Sidebar -->
+        <StackLayout Grid.Column="0" StyleClass="sidebar">
+            <Label Text="Accueil" StyleClass="sidebarItem"/>
+            <Label Text="Projets" StyleClass="sidebarItem"/>
+            <Label Text="Collaborateurs" StyleClass="sidebarItem"/>
+        </StackLayout>
+
+        <!-- Main Content -->
+        <StackLayout Grid.Column="1" StyleClass="mainContent">
+            <Label Text="TASKTREK" StyleClass="headerLabel"/>
+
+            <!-- Create New Project Section -->
+            <StackLayout StyleClass="newProjectSection">
+                <Label Text="CREER UN NOUVEAU PROJET" StyleClass="sectionHeader"/>
+                <StackLayout Orientation="Horizontal" StyleClass="inputRow">
+                    <Entry Placeholder="Titre" StyleClass="inputField"/>
+                    <Entry Placeholder="Date de debut" StyleClass="inputField"/>
+                    <Entry Placeholder="Date de fin" StyleClass="inputField"/>
+                    <Button Text="Enregistrer" StyleClass="saveButton"/>
+                </StackLayout>
+                <Editor Placeholder="Description" StyleClass="descriptionEditor"/>
+                <Label Text="+ AJOUTER UNE TACHE" StyleClass="addTaskLabel"/>
+            </StackLayout>
+
+            <!-- My Projects Section -->
+            <Label Text="Mes Projets" StyleClass="sectionHeader"/>
+            <StackLayout StyleClass="projectList">
+                <Grid StyleClass="projectItem">
+                    <Label Text="Titre" StyleClass="projectTitle"/>
+                    <Label Text="Date de fin" StyleClass="projectDate"/>
+                    <Label Text="En cours..." StyleClass="projectStatus"/>
+                </Grid>
+                <Grid StyleClass="projectItem">
+                    <Label Text="Titre" StyleClass="projectTitle"/>
+                    <Label Text="Date de fin" StyleClass="projectDate"/>
+                    <Label Text="Terminé" StyleClass="projectStatus"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
