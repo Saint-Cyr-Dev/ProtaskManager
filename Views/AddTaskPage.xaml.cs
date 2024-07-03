@@ -11,7 +11,7 @@ namespace ProTaskMangers02.Views
         public AddTaskPage()
         {
             InitializeComponent();
-            BindingContext = new AddTaskViewModel(); // Définir le ViewModel de la page d'ajout de tâche
+            BindingContext = new AddTaskViewModel(); 
         }
     }
 }

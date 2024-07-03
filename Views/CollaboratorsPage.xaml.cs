@@ -12,7 +12,7 @@ namespace ProTaskMangers02.Views
         public CollaboratorsPage()
         {
             InitializeComponent();
-            BindingContext = new CollaboratorsViewModel(); // Définir le ViewModel de la page des collaborateurs
+            BindingContext = new CollaboratorsViewModel(); 
         }
 
         private void InitializeComponent()

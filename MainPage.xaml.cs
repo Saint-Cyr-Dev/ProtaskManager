@@ -17,7 +17,6 @@ namespace ProTaskMangers02
                 new Project { Title = "Project 2", EndDate = "02/02/2024", Status = "Terminé" }
             };
 
-            // Binding Projects to the ListView
             var projectListView = new ListView
             {
                 ItemsSource = Projects,
@@ -28,7 +27,6 @@ namespace ProTaskMangers02
                     grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
                     grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
-                    // Add row definition
                     grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
                     var titleLabel = new Label { StyleClass = new[] { "projectTitle" } };
@@ -63,7 +61,7 @@ namespace ProTaskMangers02
 
         private void InitializeComponent()
         {
-            // Your existing implementation of InitializeComponent
+            
         }
 
         public class Project

@@ -5,43 +5,97 @@
              Title="TaskTrek"
              StyleClass="mainPage">
 
+    <ContentPage.Resources>
+        <!-- Styles pour les éléments réutilisables -->
+        <Style TargetType="Label" x:Key="SectionHeaderStyle">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Margin" Value="0,10,0,5" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="HeaderLabelStyle">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Margin" Value="0,10,0,10" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="SidebarItemStyle">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="Margin" Value="0,5" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="ProjectTitleStyle">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="ProjectDateStyle">
+            <Setter Property="FontSize" Value="Small" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="ProjectStatusStyle">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="SaveButtonStyle">
+            <Setter Property="BackgroundColor" Value="#007bff" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+
+        <Style TargetType="Entry" x:Key="InputFieldStyle">
+            <Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="Margin" Value="5,0" />
+        </Style>
+
+        <Style TargetType="Editor" x:Key="DescriptionEditorStyle">
+            <Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="HeightRequest" Value="100" />
+            <Setter Property="Margin" Value="5,10" />
+        </Style>
+    </ContentPage.Resources>
+
     <Grid>
         <!-- Sidebar -->
         <StackLayout Grid.Column="0" StyleClass="sidebar">
-            <Label Text="Accueil" StyleClass="sidebarItem"/>
-            <Label Text="Projets" StyleClass="sidebarItem"/>
-            <Label Text="Collaborateurs" StyleClass="sidebarItem"/>
+            <Label Text="Accueil" Style="{StaticResource SidebarItemStyle}" />
+            <Label Text="Projets" Style="{StaticResource SidebarItemStyle}" />
+            <Label Text="Collaborateurs" Style="{StaticResource SidebarItemStyle}" />
         </StackLayout>
 
         <!-- Main Content -->
         <StackLayout Grid.Column="1" StyleClass="mainContent">
-            <Label Text="TASKTREK" StyleClass="headerLabel"/>
+            <Label Text="TASKTREK" Style="{StaticResource HeaderLabelStyle}" />
 
             <!-- Create New Project Section -->
             <StackLayout StyleClass="newProjectSection">
-                <Label Text="CREER UN NOUVEAU PROJET" StyleClass="sectionHeader"/>
+                <Label Text="CRÉER UN NOUVEAU PROJET" Style="{StaticResource SectionHeaderStyle}" />
                 <StackLayout Orientation="Horizontal" StyleClass="inputRow">
-                    <Entry Placeholder="Titre" StyleClass="inputField"/>
-                    <Entry Placeholder="Date de debut" StyleClass="inputField"/>
-                    <Entry Placeholder="Date de fin" StyleClass="inputField"/>
-                    <Button Text="Enregistrer" StyleClass="saveButton"/>
+                    <Entry Placeholder="Titre" Style="{StaticResource InputFieldStyle}" />
+                    <Entry Placeholder="Date de début" Style="{StaticResource InputFieldStyle}" />
+                    <Entry Placeholder="Date de fin" Style="{StaticResource InputFieldStyle}" />
+                    <Button Text="Enregistrer" Style="{StaticResource SaveButtonStyle}" />
                 </StackLayout>
-                <Editor Placeholder="Description" StyleClass="descriptionEditor"/>
-                <Label Text="+ AJOUTER UNE TACHE" StyleClass="addTaskLabel"/>
+                <Editor Placeholder="Description" Style="{StaticResource DescriptionEditorStyle}" />
+                <Label Text="+ AJOUTER UNE TÂCHE" Style="{StaticResource SectionHeaderStyle}" />
             </StackLayout>
 
             <!-- My Projects Section -->
-            <Label Text="Mes Projets" StyleClass="sectionHeader"/>
+            <Label Text="Mes Projets" Style="{StaticResource SectionHeaderStyle}" />
             <StackLayout StyleClass="projectList">
                 <Grid StyleClass="projectItem">
-                    <Label Text="Titre" StyleClass="projectTitle"/>
-                    <Label Text="Date de fin" StyleClass="projectDate"/>
-                    <Label Text="En cours..." StyleClass="projectStatus"/>
+                    <Label Text="Titre" Style="{StaticResource ProjectTitleStyle}" />
+                    <Label Text="Date de fin" Style="{StaticResource ProjectDateStyle}" />
+                    <Label Text="En cours..." Style="{StaticResource ProjectStatusStyle}" />
                 </Grid>
                 <Grid StyleClass="projectItem">
-                    <Label Text="Titre" StyleClass="projectTitle"/>
-                    <Label Text="Date de fin" StyleClass="projectDate"/>
-                    <Label Text="Terminé" StyleClass="projectStatus"/>
+                    <Label Text="Titre" Style="{StaticResource ProjectTitleStyle}" />
+                    <Label Text="Date de fin" Style="{StaticResource ProjectDateStyle}" />
+                    <Label Text="Terminé" Style="{StaticResource ProjectStatusStyle}" />
                 </Grid>
             </StackLayout>
         </StackLayout>

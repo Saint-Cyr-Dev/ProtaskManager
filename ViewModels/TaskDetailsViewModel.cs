@@ -1,32 +1,56 @@
-﻿using ProTaskManager.ViewModels;
+﻿using ProTaskManager.Services;
+using ProTaskManager.ViewModels;
+using ProTaskMangers02.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace ProTaskMangers02.ViewModels
 {
     public class TaskDetailsViewModel : BaseViewModel
     {
-        private Task _task;
+        private TaskModel _task;
 
-        public Task Task
+        public TaskModel Task
         {
             get { return _task; }
             set { SetProperty(ref _task, value); }
         }
 
-        public TaskDetailsViewModel(int taskId)
+        private readonly DatabaseHelper _database;
+
+        public TaskDetailsViewModel(DatabaseHelper database, int taskId)
         {
-            LoadTask(taskId); // Load task details from database
+            _database = database ?? throw new ArgumentNullException(nameof(database));
+
+            Task.Run(async () => await LoadTask(taskId));
         }
 
-        private void LoadTask(int taskId)
+        private async Task LoadTask(int taskId)
         {
-            // Load task details from the database using taskId
-            // Example:
-            // Task = await App.Database.GetTaskAsync(taskId);
+            try
+            {
+                Task = await _database.GetTaskAsync(taskId);
+
+                if (Task == null)
+                {
+                    await HandleTaskNotFound(taskId);
+                }
+            }
+            catch (Exception ex)
+            {
+                await HandleException(ex);
+            }
+        }
+
+        private async Task HandleTaskNotFound(int taskId)
+        {
+            await App.Current.MainPage.DisplayAlert("Erreur", $"La tâche avec l'ID {taskId} n'a pas été trouvée.", "OK");
+        }
+
+        private async Task HandleException(Exception ex)
+        {
+            await App.Current.MainPage.DisplayAlert("Erreur", $"Erreur lors du chargement de la tâche : {ex.Message}", "OK");
         }
     }
 }

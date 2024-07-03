@@ -16,7 +16,7 @@ namespace ProTaskMangers02
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddConsole(LogLevel.Debug);
 #endif
 
             return builder.Build();

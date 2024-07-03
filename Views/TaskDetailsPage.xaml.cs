@@ -12,7 +12,7 @@ namespace ProTaskMangers02.Views
         public TaskDetailsPage(int taskId)
         {
             InitializeComponent();
-            BindingContext = new TaskDetailsViewModel(taskId); // Définir le ViewModel de la page des détails de la tâche
+            BindingContext = new TaskDetailsViewModel(taskId);
         }
 
         private void InitializeComponent()

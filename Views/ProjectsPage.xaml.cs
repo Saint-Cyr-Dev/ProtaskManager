@@ -12,7 +12,7 @@ namespace ProTaskMangers02.Views
         public ProjectsPage()
         {
             InitializeComponent();
-            BindingContext = new ProjectsViewModel(); // Définir le ViewModel de la page des projets
+            BindingContext = new ProjectsViewModel(); 
         }
 
         private void InitializeComponent()

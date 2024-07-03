@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProTaskManager.Views.MainPage"
-             Title="TaskTrek"
-             StyleClass="mainPage">
+             x:Class="ProTaskManager.Views.HomePage"
+             Title="Home Page">
 
-    <!-- Contenu de la page principale -->
+    <!-- Liaison du contexte de données au HomePageViewModel -->
+    <ContentPage.BindingContext>
+        <local:HomePageViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <!-- Formulaire de création de projet -->
+        <Label Text="Nom du projet" />
+        <Entry Text="{Binding Name}" />
+
+        <Label Text="Description" />
+        <Entry Text="{Binding Description}" />
+
+        <Label Text="Date de début" />
+        <DatePicker Date="{Binding StartDate}" />
+
+        <Label Text="Date de fin" />
+        <DatePicker Date="{Binding EndDate}" />
+
+        <Button Text="Ajouter le projet" Command="{Binding AddProjectCommand}" />
+
+        <!-- Liste des projets -->
+        <ListView ItemsSource="{Binding Projects}" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Name}" FontSize="Medium" />
+                            <Label Text="{Binding Description}" FontSize="Small" />
+                            <Label Text="{Binding StartDate, StringFormat='Début: {0:d}'}" FontSize="Small" />
+                            <Label Text="{Binding EndDate, StringFormat='Fin: {0:d}'}" FontSize="Small" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

@@ -3,7 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProTaskManager.Views.ProjectsPage"
              Title="Projets"
-             StyleClass="page">
+             StyleClass="page"
+             xmlns:vm="clr-namespace:ProTaskMangers02.ViewModels">
 
-    <!-- Contenu de la page des projets -->
+	<!-- Liaison du contexte de données au ProjectsViewModel -->
+	<ContentPage.BindingContext>
+		<vm:ProjectsViewModel />
+	</ContentPage.BindingContext>
+
+	<StackLayout Padding="10">
+
+		<!-- Liste des projets -->
+		<ListView ItemsSource="{Binding Projects}" RowHeight="100">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Padding="10" BackgroundColor="#f0f0f0">
+							<Label Text="{Binding Name}" FontSize="Large" />
+							<Label Text="{Binding Description}" FontSize="Medium" />
+							<StackLayout Orientation="Horizontal" Spacing="10">
+								<Label Text="Début:" FontSize="Small" VerticalOptions="Center" />
+								<Label Text="{Binding StartDate, StringFormat='dd/MM/yyyy'}" FontSize="Small" VerticalOptions="Center" />
+								<Label Text="Fin:" FontSize="Small" VerticalOptions="Center" />
+								<Label Text="{Binding EndDate, StringFormat='dd/MM/yyyy'}" FontSize="Small" VerticalOptions="Center" />
+							</StackLayout>
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+
+	</StackLayout>
+
 </ContentPage>

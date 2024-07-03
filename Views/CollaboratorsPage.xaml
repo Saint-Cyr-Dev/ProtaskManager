@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProTaskManager.Views.CollaboratorsPage"
-             Title="Collaborateurs"
-             StyleClass="page">
+             x:Class="ProTaskMangers02.Views.CollaboratorsPage"
+             xmlns:vm="clr-namespace:ProTaskMangers02.ViewModels"
+             Title="Collaborateurs">
 
-    <!-- Contenu de la page des collaborateurs -->
+	<!-- Liaison du contexte de données au CollaboratorsViewModel -->
+	<ContentPage.BindingContext>
+		<vm:CollaboratorsViewModel />
+	</ContentPage.BindingContext>
+
+	<ContentPage.Resources>
+	</ContentPage.Resources>
+
+	<StackLayout Padding="10">
+
+		<!-- Liste des collaborateurs -->
+		<ListView ItemsSource="{Binding Collaborators}" VerticalOptions="FillAndExpand">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Padding="10" BackgroundColor="{Binding IsCompleted, Converter={StaticResource BoolToColorConverter}}">
+							<Label Text="{Binding Name}" FontSize="Medium" />
+							<Label Text="{Binding Role}" FontSize="Small" />
+							<Label Text="{Binding Email}" FontSize="Small" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+
+	</StackLayout>
+
 </ContentPage>

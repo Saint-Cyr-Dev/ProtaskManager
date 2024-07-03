@@ -1,5 +1,6 @@
 ﻿using ProTaskMangers02.Models;
 using ProTaskManager.ViewModels;
+using System;
 using System.Threading.Tasks;
 
 namespace ProTaskMangers02.ViewModels
@@ -10,17 +11,25 @@ namespace ProTaskMangers02.ViewModels
 
         public Project Project
         {
-            get { return _project; }
-            set { SetProperty(ref _project, value); }
+            get => _project;
+            set => SetProperty(ref _project, value);
         }
 
         public ProjectDetailsViewModel(int projectId)
         {
-            _ = LoadProject(projectId); // Charger les détails du projet depuis la base de données
+            Task.Run(async () => await LoadProject(projectId));
         }
 
-        private async System.Threading.Tasks.Task LoadProject(int projectId) =>
-            // Charger les détails du projet depuis la base de données en utilisant projectId
-            Project = await App.Database.GetProjectAsync(projectId);
+        private async Task LoadProject(int projectId)
+        {
+            try
+            {
+                Project = await App.Database.GetProjectAsync(projectId) ?? throw new Exception("Projet non trouvé.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors du chargement du projet : {ex.Message}");
+            }
+        }
     }
 }

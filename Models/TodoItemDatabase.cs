@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SQLite;
+using System;
 
-namespace ProTaskMangers02.Models
+namespace ProTaskManagers02.Models
 {
-    public class Task
+    public class TodoItem
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
+        [MaxLength(250)]
+        [NotNull]
         public string Title { get; set; }
+
         public DateTime StartDate { get; set; }
+
         public DateTime EndDate { get; set; }
+
+        [MaxLength(500)]
         public string Description { get; set; }
+
         public bool IsCompleted { get; set; }
-        public int Id { get; internal set; }
     }
 }

@@ -5,5 +5,33 @@
              Title="Détails du Projet"
              StyleClass="page">
 
-    <!-- Contenu de la page des détails du projet -->
+	<!-- Liaison du contexte de données au ProjectDetailsViewModel -->
+	<ContentPage.BindingContext>
+		<vm:ProjectDetailsViewModel />
+	</ContentPage.BindingContext>
+
+	<StackLayout Padding="20">
+
+		<!-- Titre du projet -->
+		<Label Text="Titre" FontSize="Medium" />
+		<Label Text="{Binding Project.Title}" FontSize="Large" />
+
+		<!-- Description du projet -->
+		<Label Text="Description" FontSize="Medium" />
+		<Label Text="{Binding Project.Description}" />
+
+		<!-- Date de début du projet -->
+		<Label Text="Date de Début" FontSize="Medium" />
+		<Label Text="{Binding Project.StartDate, StringFormat='dd/MM/yyyy'}" />
+
+		<!-- Date de fin du projet -->
+		<Label Text="Date de Fin" FontSize="Medium" />
+		<Label Text="{Binding Project.EndDate, StringFormat='dd/MM/yyyy'}" />
+
+		<!-- Statut du projet -->
+		<Label Text="Statut" FontSize="Medium" />
+		<Label Text="{Binding Project.Status}" />
+
+	</StackLayout>
+
 </ContentPage>

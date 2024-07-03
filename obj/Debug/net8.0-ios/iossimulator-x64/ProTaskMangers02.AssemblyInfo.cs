@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProTaskMangers02")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9a7a0f0f2c7e096cc9c82cd2f097078ec582ce55")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProTaskMangers02")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProTaskMangers02")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

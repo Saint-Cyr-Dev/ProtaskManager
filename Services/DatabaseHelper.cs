@@ -3,13 +3,12 @@ using ProTaskMangers02.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using TaskModel = ProTaskMangers02.Models.Task; // Alias for your Task model
 
 namespace ProTaskManager.Services
 {
     public class DatabaseHelper
     {
-        readonly SQLiteAsyncConnection _database;
+        private readonly SQLiteAsyncConnection _database;
 
         public DatabaseHelper(string dbPath)
         {
@@ -17,96 +16,187 @@ namespace ProTaskManager.Services
             InitializeDatabaseAsync().Wait();
         }
 
-        private async System.Threading.Tasks.Task InitializeDatabaseAsync()
+        private async Task InitializeDatabaseAsync()
         {
-            // Create tables if they do not exist
-            await _database.CreateTableAsync<Project>().ConfigureAwait(false);
-            await _database.CreateTableAsync<TaskModel>().ConfigureAwait(false);
-            await _database.CreateTableAsync<Collaborator>().ConfigureAwait(false);
+            try
+            {
+                await Task.Run(async () =>
+                {
+                    await _database.CreateTableAsync<Project>().ConfigureAwait(false);
+                    await _database.CreateTableAsync<TaskModel>().ConfigureAwait(false);
+                    await _database.CreateTableAsync<Collaborator>().ConfigureAwait(false);
+                }).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de l'initialisation de la base de données : {ex.Message}");
+                throw;
+            }
         }
 
-        // Project CRUD operations
+        // Projets
+
         public async Task<List<Project>> GetProjectsAsync()
         {
-            return await _database.Table<Project>().ToListAsync().ConfigureAwait(false);
+            try
+            {
+                return await _database.Table<Project>().ToListAsync().ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération des projets : {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<Project> GetProjectAsync(int id)
         {
-            return await _database.Table<Project>().Where(i => i.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
+            try
+            {
+                return await _database.Table<Project>().Where(p => p.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération du projet avec l'ID {id} : {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<int> SaveProjectAsync(Project project)
         {
-            if (project.Id != 0)
+            try
             {
-                return await _database.UpdateAsync(project).ConfigureAwait(false);
+                return project.Id != 0 ? await _database.UpdateAsync(project).ConfigureAwait(false) :
+                                         await _database.InsertAsync(project).ConfigureAwait(false);
             }
-            else
+            catch (Exception ex)
             {
-                return await _database.InsertAsync(project).ConfigureAwait(false);
+                Console.WriteLine($"Erreur lors de l'enregistrement du projet : {ex.Message}");
+                throw;
             }
         }
 
         public async Task<int> DeleteProjectAsync(Project project)
         {
-            return await _database.DeleteAsync(project).ConfigureAwait(false);
+            try
+            {
+                return await _database.DeleteAsync(project).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la suppression du projet : {ex.Message}");
+                throw;
+            }
         }
 
-        // Task CRUD operations
+        // Tâches
+
         public async Task<List<TaskModel>> GetTasksAsync()
         {
-            return await _database.Table<TaskModel>().ToListAsync().ConfigureAwait(false);
+            try
+            {
+                return await _database.Table<TaskModel>().ToListAsync().ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération des tâches : {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<TaskModel> GetTaskAsync(int id)
         {
-            return await _database.Table<TaskModel>().Where(i => i.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
+            try
+            {
+                return await _database.Table<TaskModel>().Where(t => t.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération de la tâche avec l'ID {id} : {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<int> SaveTaskAsync(TaskModel task)
         {
-            if (task.Id != 0)
+            try
             {
-                return await _database.UpdateAsync(task).ConfigureAwait(false);
+                return task.Id != 0 ? await _database.UpdateAsync(task).ConfigureAwait(false) :
+                                         await _database.InsertAsync(task).ConfigureAwait(false);
             }
-            else
+            catch (Exception ex)
             {
-                return await _database.InsertAsync(task).ConfigureAwait(false);
+                Console.WriteLine($"Erreur lors de l'enregistrement de la tâche : {ex.Message}");
+                throw;
             }
         }
 
         public async Task<int> DeleteTaskAsync(TaskModel task)
         {
-            return await _database.DeleteAsync(task).ConfigureAwait(false);
+            try
+            {
+                return await _database.DeleteAsync(task).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la suppression de la tâche : {ex.Message}");
+                throw;
+            }
         }
 
-        // Collaborator CRUD operations
+        // Collaborateurs
+
         public async Task<List<Collaborator>> GetCollaboratorsAsync()
         {
-            return await _database.Table<Collaborator>().ToListAsync().ConfigureAwait(false);
+            try
+            {
+                return await _database.Table<Collaborator>().ToListAsync().ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération des collaborateurs : {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<Collaborator> GetCollaboratorAsync(int id)
         {
-            return await _database.Table<Collaborator>().Where(i => i.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
+            try
+            {
+                return await _database.Table<Collaborator>().Where(c => c.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération du collaborateur avec l'ID {id} : {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<int> SaveCollaboratorAsync(Collaborator collaborator)
         {
-            if (collaborator.Id != 0)
+            try
             {
-                return await _database.UpdateAsync(collaborator).ConfigureAwait(false);
+                return collaborator.Id != 0 ? await _database.UpdateAsync(collaborator).ConfigureAwait(false) :
+                                               await _database.InsertAsync(collaborator).ConfigureAwait(false);
             }
-            else
+            catch (Exception ex)
             {
-                return await _database.InsertAsync(collaborator).ConfigureAwait(false);
+                Console.WriteLine($"Erreur lors de l'enregistrement du collaborateur : {ex.Message}");
+                throw;
             }
         }
 
         public async Task<int> DeleteCollaboratorAsync(Collaborator collaborator)
         {
-            return await _database.DeleteAsync(collaborator).ConfigureAwait(false);
+            try
+            {
+                return await _database.DeleteAsync(collaborator).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la suppression du collaborateur : {ex.Message}");
+                throw;
+            }
         }
     }
 }

@@ -2,8 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProTaskManager.Views.AddTaskPage"
-             Title="Ajouter une T�che"
-             StyleClass="page">
+             Title="Ajouter une Tâche"
+             StyleClass="page"
+             x:DataType="ProTaskMangers02.ViewModels.AddTaskViewModel">
 
-    <!-- Contenu de la page d'ajout de t�che -->
+    <!-- Définition du contenu de la page -->
+    <StackLayout Padding="20">
+
+        <!-- Titre de la tâche -->
+        <Label Text="Titre de la Tâche" FontSize="Medium" />
+        <Entry Placeholder="Entrez le titre de la tâche" Text="{Binding Title, Mode=TwoWay}" x:Name="TitleEntry"/>
+
+        <!-- Description de la tâche -->
+        <Label Text="Description" FontSize="Medium" />
+        <Editor Placeholder="Entrez la description de la tâche" HeightRequest="100" Text="{Binding Description, Mode=TwoWay}" x:Name="DescriptionEditor"/>
+
+        <!-- Date de début -->
+        <Label Text="Date de Début" FontSize="Medium" />
+        <DatePicker Date="{Binding StartDate, Mode=TwoWay}" x:Name="StartDatePicker"/>
+
+        <!-- Date de fin -->
+        <Label Text="Date de Fin" FontSize="Medium" />
+        <DatePicker Date="{Binding EndDate, Mode=TwoWay}" x:Name="EndDatePicker"/>
+
+        <!-- Bouton d'ajout de tâche -->
+        <Button Text="Ajouter la Tâche" Command="{Binding AddTaskCommand}" />
+
+    </StackLayout>
+
 </ContentPage>

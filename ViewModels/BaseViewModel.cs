@@ -1,8 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace ProTaskManager.ViewModels
 {
+    
     public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -18,7 +20,9 @@ namespace ProTaskManager.ViewModels
                 return false;
 
             storage = value;
+
             OnPropertyChanged(propertyName);
+
             return true;
         }
     }

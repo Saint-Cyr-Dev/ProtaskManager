@@ -12,7 +12,7 @@ namespace ProTaskMangers02.Views
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel(); // Définir le ViewModel de la page principale
+            BindingContext = new MainViewModel(); 
         }
 
         private void InitializeComponent()

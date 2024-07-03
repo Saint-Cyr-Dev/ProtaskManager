@@ -6,9 +6,14 @@
         {
             InitializeComponent();
 
+            if (Database is != null )
+            {
+                return;
+            }
+
             MainPage = new AppShell();
         }
 
-        public static object Database { get; internal set; }
+        public static SQLite.SQLiteAsyncConnection Database { get; internal set; }
     }
 }
